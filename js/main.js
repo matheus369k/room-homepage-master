@@ -21,18 +21,16 @@ function SlideAuto(slidebtn = '') {
 
     const tagSlide = $('.Container_img_top_left')
 
-    var imgNow = Number(tagSlide.css('background-image').split('-')[3][0])
-
-    console.log(imgNow)
+    var imgNow = tagSlide.css('background-image').split('-')[3][0]
 
     if (slidebtn === 'btn_prev') {
 
-        imgNow = imgNow - 1
+        imgNow = parseInt(imgNow) - 1
 
     } 
     else if (slidebtn === 'btn_next' || slidebtn === '') {
 
-        imgNow = imgNow + 1
+        imgNow = parseInt(imgNow) + 1
 
     }
 
@@ -59,7 +57,7 @@ function SlideAuto(slidebtn = '') {
 
     setTimeout(() => {
 
-        tagSlide.css({ 'background-image': `url(./images/${versionImg}-image-hero-${imgNow}.jpg)` })
+        tagSlide.css({ 'background-image': `url(./images/${versionImg}-image-hero-${parseInt(imgNow)}.jpg)` })
 
         switchtext(imgNow);
 
