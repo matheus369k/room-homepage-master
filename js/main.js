@@ -38,26 +38,25 @@ function SlideAuto(slidebtn = '') {
         imgNow = 2
     }
 
-    tagSlide.animate({ opacity: '0', }, 'slow')
-
     let versionImg = 'desktop'
 
-    if (window.innerWidth < 769) 
-    {
+    if (window.innerWidth < 769) {
 
         versionImg = 'mobile'
 
     }
 
+    $(tagSlide).addClass('animation_switch_img');
+
     setTimeout(() => {
 
         tagSlide.css({ 'background-image': `url(./images/${versionImg}-image-hero-${imgNow + 1}.jpg)` })
 
-        tagSlide.animate({ opacity: '1' }, 'slow')
-
         switchtext(imgNow);
 
-    }, 800)
+    }, 290)
+
+    setTimeout(() => { $(tagSlide).removeClass('animation_switch_img') }, 601)
 
     return
 }
@@ -81,4 +80,34 @@ function switchtext(imgNow) {
 
     return
 }
+
+$('#menu').click(() => {
+
+    if (document.querySelector('.active')) {
+
+        $('.navbar_container').animate({height: '0px'}, 'slow')
+
+        setTimeout(()=>{
+
+            $('.navbar_container').removeClass('active');
+    
+            $('#menu').attr('src', './images/icon-hamburger.svg');
+    
+            $('.head').removeClass('block')
+
+        }, 500)
+
+    }
+    else {
+
+        $('.navbar_container').css({height: '150px'})
+
+        $('.navbar_container').addClass('active');
+
+        $('#menu').attr('src', './images/icon-close.svg');
+
+        $('.head').addClass('block');
+
+    }
+})
 

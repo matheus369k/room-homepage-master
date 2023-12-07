@@ -23,9 +23,13 @@ html, body {
     min-height: 100vh;
     height: 100%;
 
+    margin: 0 auto;
+
+    position: relative;
+
     overflow-x: hidden;
 
-    background-color: black;
+    background-color: var(--color-bg);
 
     font-family: 'League Spartan', sans-serif;
 
@@ -50,8 +54,12 @@ html, body {
     background-size: cover;
 }
 
+.animation_switch_img {
+    animation: animation-switch-img .6s ease-out alternate;
+}
+
 .head {
-    position: fixed;
+    position: absolute;
     top: 30px;
     left: 50px;
 
@@ -61,6 +69,10 @@ html, body {
     column-gap: 60px;
 
     z-index: 1;
+}
+
+.menu {
+    display: none;
 }
 
 .navbar_container {
@@ -86,6 +98,8 @@ html, body {
     font-size: 1.1em;
 
     cursor: pointer;
+
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.157);
 
     position: relative;
 } 
@@ -116,6 +130,8 @@ main {
     display: grid;
     grid-template-columns: 30% 30% 10% 30%;
     grid-template-rows: 55vh 10vh 35vh;
+
+    position: absolute;
 }
 
 .Container_main_information{
