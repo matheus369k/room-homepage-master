@@ -21,27 +21,26 @@ function SlideAuto(slidebtn = '') {
 
     const tagSlide = $('.Container_img_top_left');
 
-    let imgNow = tagSlide.css('background-image').split('-')[3][0];
-
-    console.log(imgNow);
+    let imgNow = tagSlide.css('background-image').split('-');
+    let imgvalue = imgNow[imgNow.length - 1][0]
 
     if (slidebtn === 'btn_prev') {
 
-        imgNow -= 1
+        imgvalue -= 1
 
     } else if (slidebtn === 'btn_next' || slidebtn === '') {
 
-        imgNow += 1
+        imgvalue += 1
 
     }
 
-    if (imgNow > 3) {
+    if (imgvalue > 3) {
 
-        imgNow = 1
+        imgvalue = 1
 
-    } else if (imgNow < 1) {
+    } else if (imgvalue < 1) {
 
-        imgNow = 3
+        imgvalue = 3
     }
 
     let versionImg = 'desktop'
@@ -56,9 +55,9 @@ function SlideAuto(slidebtn = '') {
 
     setTimeout(() => {
 
-        tagSlide.css({ 'background-image': `url(./images/${versionImg}-image-hero-${imgNow}.jpg)`})
+        tagSlide.css({ 'background-image': `url(./images/${versionImg}-image-hero-${imgvalue}.jpg)`})
 
-        switchtext(imgNow);
+        switchtext(imgvalue);
 
     }, 50)
 
@@ -66,19 +65,19 @@ function SlideAuto(slidebtn = '') {
 
     return
 }
-function switchtext(imgNow) {
+function switchtext(imgvalue) {
 
     $('.selected').removeClass('selected');
 
-    if (imgNow === 1) {
+    if (imgvalue === 1) {
 
         $('.infor_main_one').addClass('selected');
 
-    } else if (imgNow === 2) {
+    } else if (imgvalue === 2) {
 
         $('.infor_main_two').addClass('selected');
 
-    } else if (imgNow === 3) {
+    } else if (imgvalue === 3) {
 
         $('.infor_main_three').addClass('selected');
 
