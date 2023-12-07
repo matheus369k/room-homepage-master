@@ -1,0 +1,135 @@
+@media (max-width:1224px) {
+    .title {
+        font-size: 2em;
+    }
+
+    .Container_main_information {
+        row-gap: 15px;
+
+        padding: 40px;
+        padding-top: 40px;
+        padding-bottom: 80px;
+    }
+
+    .Container_secundary_information {
+        padding: 25px;
+    }
+}
+
+@media (max-width:1024px) {
+    main {
+        display: grid;
+        grid-template-columns: 30% 25% 45%;
+        grid-template-rows: 55vh 50px 60vh 50vh;
+    }
+    .title {
+        font-size: 2.5em;
+    }
+
+    .Container_img_top_left {
+        grid-column: 1/5;
+        grid-row: 1/3;
+    }
+
+    .Container_main_information {
+        grid-column: 1/3;
+        grid-row: 3;
+        
+        row-gap: 25px;
+
+        z-index: 2;
+    }
+
+    .Container_Control_switch_page {
+        grid-column: 3;
+        grid-row: 2;
+
+        z-index: 2;
+    }
+
+    .Container_img_bottom_left {
+        grid-column: 1/3;
+        grid-row: 4;
+
+        z-index: 2;
+    }
+
+    .Container_secundary_information {
+        grid-column: 3/4;
+        grid-row: 4/5;
+
+        z-index: 2;
+    }
+
+    .Container_img_bottom_right {
+        grid-column: 3/4;
+        grid-row: 3;
+
+        z-index: 2;
+
+    }
+}
+
+@media (max-width:768px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Container_img_top_left {
+        background-image: url(../images/mobile-image-hero-1.jpg);
+        width: 100vw;
+        height: 100vw;
+    }
+
+    .Container_Control_switch_page {
+        width: 100%;
+        height: 80px;
+
+        background-color: white;
+
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .Container_Control_switch_page li {
+        width: 20%;
+
+        position: relative;
+        bottom: 80px;
+    }
+    .Container_secundary_information {
+        padding: 100px 10%;
+
+        row-gap: 25px;
+    }
+
+    .Container_main_information {
+        padding: 0px 10% 100px 10%;
+    }
+
+    .Container_img_bottom_right,
+    .Container_img_bottom_left {
+        width: 100vw;
+        height: 80vw;
+    }
+}
+
+@media (max-width: 624px) {
+    .head {
+        left: 0;
+        top: 50px;
+
+        width: 100%;
+
+        justify-content: center;
+    }
+    .head img {
+        height: 20px;
+    }
+
+    .navbar_container:not(.active){
+        display: none;
+    } 
+    
+}

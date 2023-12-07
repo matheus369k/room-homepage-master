@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+@import url(./reset.css);
+
+@import url(./animation.css);
+
+:root {
+    --color-title-subtitle: hsl(0, 0%, 0%);
+
+    --color-btn-next-prev: hsl(0, 0%, 0%);
+
+    --color-text: hsl(0, 0%, 63%);
+
+    --color-bg: hsl(0, 0%, 100%);
+
+    --color-Navbar-text: hsl(0, 0%, 100%);
+    
+    --color-transparent: hsl(0, 0%, 27%);
+}
+
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+
+    overflow-x: hidden;
+
+    background-color: black;
+
+    font-family: 'League Spartan', sans-serif;
+
+    animation: loading-page .5s ease-out;
+}
+
+
+.max_min_container {
+    max-width: 1440px;
+    min-width: 375px;
+}
+
+.Container_flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-img {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.head {
+    position: fixed;
+    top: 30px;
+    left: 50px;
+
+    display: flex;
+    align-items: center;
+
+    column-gap: 60px;
+
+    z-index: 1;
+}
+
+.navbar_container {
+    height: 50px;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+
+    column-gap: 50px;
+}
+
+.navbar_container svg {
+    font-size: 2em;
+}
+
+.navbar_container li {
+    color: var(--color-Navbar-text);
+
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+    font-size: 1.1em;
+
+    cursor: pointer;
+
+    position: relative;
+} 
+
+.navbar_container li::after {
+    content: ' ';
+
+    height: 2px;
+    width: 0%;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: var(--color-Navbar-text);
+
+    transition: .5s ease-in-out;
+
+}
+
+.navbar_container li:hover::after {
+    width: 60%;
+
+}
+
+main {
+    display: grid;
+    grid-template-columns: 30% 30% 10% 30%;
+    grid-template-rows: 55vh 10vh 35vh;
+}
+
+.Container_main_information{
+    grid-column: 3/5;
+    grid-row: 1/3;
+
+    flex-direction: column;
+
+    background-color: var(--color-bg);
+
+    row-gap: 25px;
+
+    padding: 80px;
+    padding-top: 150px;
+    padding-bottom: calc(10vh + 80px);
+}
+
+.Container_main_information section {
+    row-gap: 25px;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: 700;
+
+    color: var(--color-title-subtitle);
+}
+
+.text{
+    color: var(--color-text);
+
+    animation: load-text 1s ease-in-out;
+
+    line-height: 22px;
+
+    font-size: 14px;
+}
+
+.switch_infor {
+    align-self: flex-start;
+
+    font-weight: 600;
+    font-size: 16px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 11px;
+
+    display: flex;
+    align-items: center;
+    
+    column-gap: 10px;
+
+    cursor: pointer;
+}
+
+.switch_infor:hover {
+    color: var(--color-transparent);
+}
+
+.infor_main_one:not(.selected){
+    display: none;
+}
+
+.infor_main_two:not(.selected){
+    display: none;
+}
+
+.infor_main_three:not(.selected){
+    display: none;
+}
+
+.selected {
+    animation: load-text 1s ease-in-out;
+}
+
+.Container_Control_switch_page {
+    grid-column: 3;
+    grid-row: 2;
+
+    z-index: 2;
+
+    display: flex;
+}
+
+.Container_Control_switch_page  li {
+    background-color: var(--color-btn-next-prev);
+
+    height: 100%;
+    width: 50%;
+
+    cursor: pointer;
+}
+
+.Container_Control_switch_page  li:hover {
+    background-color: var(--color-transparent);
+}
+
+.Container_img_top_left{
+    grid-column: 1/3;
+    grid-row: 1/3;
+    
+    background-image: url(../images/desktop-image-hero-1.jpg);
+}
+
+.Container_img_bottom_left {
+    grid-column: 1;
+    grid-row: 3;
+
+    background-image: url(../images/image-about-dark.jpg);
+}
+
+.Container_secundary_information {
+    grid-column: 2/4;
+    grid-row: 3;
+
+    flex-direction: column;
+
+    background-color: var(--color-bg);
+
+    row-gap: 10px;
+
+    padding: 50px;
+}
+
+.sub_title {
+    font-size: 1em;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    animation: load-text 1s ease-in-out;
+
+    align-self: flex-start;
+
+    letter-spacing: 6px;
+}
+
+.Container_img_bottom_right {
+    grid-column: 4;
+    grid-row: 3;
+
+    background-image: url(../images/image-about-light.jpg);
+}
