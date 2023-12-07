@@ -37,8 +37,8 @@ O projeto demorou mais ou menos 18 hora para ser completo ao todo, contudo 1/4 d
 
 ## 🖋️Auto
 
-@Matheus369k
+Matheus369k
 
 ## 📃Licença
 
-( MIT ) - veja aqui [LICENSE](./LICENSE)
+Não fora aderida!!
