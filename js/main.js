@@ -56,7 +56,7 @@ function SlideAuto(slidebtn = '') {
 
     setTimeout(() => {
 
-        tagSlide.css({ 'background-image': `url(../images/${versionImg}-image-hero-${imgNow}.jpg)` })
+        tagSlide.css({ 'background-image': `url(./images/${versionImg}-image-hero-${imgNow}.jpg)` })
 
         switchtext(imgNow);
 
