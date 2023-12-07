@@ -19,26 +19,27 @@ document.querySelectorAll('.btn_switch').forEach(btn => {
 
 function SlideAuto(slidebtn = '') {
 
-    const tagSlide = $('.Container_img_top_left')
+    const tagSlide = $('.Container_img_top_left');
 
-    var imgNow = tagSlide.css('background-image').split('-')[3][0]
+    let imgNow = tagSlide.css('background-image').split('-')[3][0];
+
+    console.log(imgNow);
 
     if (slidebtn === 'btn_prev') {
 
-        imgNow = parseInt(imgNow) - 1
+        imgNow -= 1
 
-    } 
-    else if (slidebtn === 'btn_next' || slidebtn === '') {
+    } else if (slidebtn === 'btn_next' || slidebtn === '') {
 
-        imgNow = parseInt(imgNow) + 1
+        imgNow += 1
 
     }
 
     if (imgNow > 3) {
 
         imgNow = 1
-    }
-    else if (imgNow < 1) {
+
+    } else if (imgNow < 1) {
 
         imgNow = 3
     }
@@ -51,13 +52,11 @@ function SlideAuto(slidebtn = '') {
 
     }
 
-    console.log(imgNow)
-
     $(tagSlide).addClass('animation_switch_img');
 
     setTimeout(() => {
 
-        tagSlide.css({ 'background-image': `url(./images/${versionImg}-image-hero-${parseInt(imgNow)}.jpg)` })
+        tagSlide.css({ 'background-image': `url(./images/${versionImg}-image-hero-${imgNow}.jpg)`})
 
         switchtext(imgNow);
 
@@ -92,14 +91,14 @@ $('#menu').click(() => {
 
     if (document.querySelector('.active')) {
 
-        $('.navbar_container').animate({height: '0px'}, 'slow')
+        $('.navbar_container').animate({ height: '0px' }, 'slow')
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
             $('.navbar_container').removeClass('active');
-    
+
             $('#menu').attr('src', './images/icon-hamburger.svg');
-    
+
             $('.head').removeClass('block')
 
         }, 500)
@@ -107,7 +106,7 @@ $('#menu').click(() => {
     }
     else {
 
-        $('.navbar_container').css({height: '150px'})
+        $('.navbar_container').css({ height: '150px' })
 
         $('.navbar_container').addClass('active');
 

@@ -31,6 +31,7 @@
         grid-template-columns: 30% 25% 45%;
         grid-template-rows: 55vh 50px 60vh 50vh;
     }
+
     .title {
         font-size: 2.5em;
     }
@@ -43,7 +44,7 @@
     .Container_main_information {
         grid-column: 1/3;
         grid-row: 3;
-        
+
         row-gap: 25px;
 
         z-index: 2;
@@ -107,6 +108,7 @@
         position: relative;
         bottom: 80px;
     }
+
     .Container_secundary_information {
         padding: 100px 10%;
 
@@ -182,7 +184,7 @@
 
     .navbar_container:not(.active) {
         display: none;
-    } 
+    }
 
     .navbar_container:is(.active) {
         animation: menu-animation .5s ease-in-out;
@@ -208,13 +210,13 @@
         column-gap: 25px;
     }
 
-    .navbar_container.active li {        
+    .navbar_container.active li {
         color: var(--color-navbar);
     }
 
     .navbar_container li::after {
         background-color: var(--color-navbar);
-    
+
     }
-    
+
 }
