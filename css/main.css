@@ -55,7 +55,7 @@ html, body {
 }
 
 .animation_switch_img {
-    animation: animation-switch-img .6s ease-out alternate;
+    animation: animation-switch-img .6s ease alternate;
 }
 
 .head {
