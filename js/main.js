@@ -21,7 +21,7 @@ function SlideAuto(slidebtn = '') {
 
     const tagSlide = $('.Container_img_top_left')
 
-    let imgNow = parseInt(tagSlide.css('background-image').split('-')[3][0])
+    let imgNow = Number(tagSlide.css('background-image').split('-')[3][0])
 
 
     if (slidebtn === 'btn_prev') {
