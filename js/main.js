@@ -21,8 +21,9 @@ function SlideAuto(slidebtn = '') {
 
     const tagSlide = $('.Container_img_top_left')
 
-    let imgNow = Number(tagSlide.css('background-image').split('-')[3][0])
+    var imgNow = Number(tagSlide.css('background-image').split('-')[3][0])
 
+    console.log(imgNow)
 
     if (slidebtn === 'btn_prev') {
 
@@ -51,6 +52,8 @@ function SlideAuto(slidebtn = '') {
         versionImg = 'mobile'
 
     }
+
+    console.log(imgNow)
 
     $(tagSlide).addClass('animation_switch_img');
 
