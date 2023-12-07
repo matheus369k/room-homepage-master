@@ -26,12 +26,12 @@ function SlideAuto(slidebtn = '') {
 
     if (slidebtn === 'btn_prev') {
 
-        imgNow -= 1
+        imgNow = imgNow - 1
 
     } 
     else if (slidebtn === 'btn_next' || slidebtn === '') {
 
-        imgNow += 1
+        imgNow = imgNow + 1
 
     }
 
